@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700%7CRaleway:400,500%7CRoboto:900');
+
+@import'normalize.scss';
+
+@mixin tr($property, $time: ease-in) {
+	transition: $property $time linear;
+}
+
+@mixin pos-a ($top: 50%, $left: 50%, $tx:-50%, $ty:-50%){
+	position: absolute;
+	top: $top;
+	left:$left;
+	transform: translate($tx, $ty)
+}
+
+$text-font: 'Raleway', sans-serif;
+$btn-font: 'Open Sans', sans-serif;
+$title-font: 'Roboto', sans-serif;
+
+
+
+$primary-color: #ffcc00;
+$text-color: #333;
+$light-color:#898f8f;
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	font-family: $text-font;
+	font-size: 1.4rem;
+	line-height: 1.6;
+	color: $text-color;
+	min-height: 100%;
+}
+.conteiner {
+	width: 1200px;
+	max-width: 90%;
+	margin: 0 auto;
+	
+}
+.section {
+	padding: 5rem  0;
+	&__head {
+		text-align: center;
+		position: relative;
+		padding-bottom: 30px;
+		&:before {
+			content: '';
+			border-top: 2px solid $primary-color;
+			display: inline-block;
+			width: 40%;
+			@include pos-a(100%, 50%, -50%, -100%);
+		}
+		&:after {
+			content: '';
+			width: 30px;
+			display: inline-block;
+			height: 30px;
+			background: #fff url('../img/bonfireicon.png') center no-repeat;
+			@include pos-a(100%, 50%);
+		}
+	}
+	&__subtitle{
+		color: $light-color;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+	&__title {
+		color: $primary-color;
+		font-size: 6rem;
+		font-weight: 900;
+		text-transform: uppercase;
+		font-family: $title-font;
+		line-height: 1.2;
+		margin: 0;
+	}
+	&__content {
+		position: relative;
+		&:before {
+			content: "";
+			width: 1px;
+			background-color: $primary-color;
+			height: 90%;
+			@include pos-a(95%, 50%, -50%, -100%)
+		}
+	}
+}
+.slider {
+	position: relative;
+	&__arrow {
+		position: absolute;
+		top: 0;
+		bottom:0;
+		width: 70px;
+		// background-color: rgba(255, 0, 0, .5);
+		// outline: 1px solid red;
+		background-repeat: no-repeat;
+		background-position: center;
+		&:hover,
+		&:focus,
+		&:active {
+			transform: scale(1.4);
+			transition: all .4s ease-in;
+			// @include tr(all, .5s ease-in)
+		}
+		
+		&--left {
+			background-image: url(../img/left.png);
+			left: 0;
+			z-index: 1;
+		}
+		&--right {
+			// transform: rotate(180deg);
+			background-image: url(../img/right.png);
+			right: 0;
+		}
+	}
+	&__content {}
+	&__item {
+		height: 600px;
+		background-color: rgba(255, 255, 0, .5);
+		
+	}
+	&__dots {
+		text-align: center;
+	}
+	&__dot {
+		display: inline-block;
+		border: 1px solid $primary-color;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: $primary-color;
+		&--white {
+			background-color: #fff;
+		}
+	}
+}
+.profile {
+	display: flex;
+	align-items: stretch;
+	flex-direction: row;
+	&__photo,
+	&__item {
+		flex-basis:50%;
+		padding: 70px;
+		
+	}
+	&__photo{
+		// border-right: 1px solid $primary-color;
+		// width: 70%;
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__pictures {
+		border: 1px solid $primary-color;
+		position: absolute;
+		padding: 10px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		&:before,
+		&:after {
+			content: "";
+  			position: absolute;
+ 			height: 110%;
+  			width: 40%;
+  			background: #fff;
+  			left: 50%;
+  			top: -5px;
+  			transform: translateX(-50%);
+  			z-index: -1;
+		}
+		&:after {
+			transform: translate(-50%, 50%);
+  			height: 40%;
+  			width: 110%;
+  			top: 10%;
+		}
+	}
+	
+	&__smallpic {
+		
+	}
+	&__picture {
+		border: 1px solid $primary-color;
+		}
+	
+	&__item {
+		text-align: center;
+	}
+	&__name {
+		position: relative;
+		font-size: 3.6rem;
+		font-weight: bold;
+		&:before {
+			content: '';
+			border-top: 2px solid $primary-color;
+			width: 100px;
+			@include pos-a(160%, 50%, -50%, -100%);
+		}
+	}
+
+	&__specialty {
+		margin: 7rem 0 3rem 0;
+		font-size: 2.4rem;
+	}
+	&__about {
+		position: relative;
+		margin: 3rem 0 5.5rem 0;
+		&:before {
+			content: '';
+			width: 70px;
+			height: 2px;
+			background-image: linear-gradient(to right, $primary-color 0, $primary-color 15%, #fff 15%, #fff 30%, $primary-color 30%, $primary-color 70%, #fff 70%, #fff 85%, $primary-color 85%);
+			@include pos-a(120%, 50%, -50%, -100%);
+		}
+	}
+	&__view {
+		padding: 10px 15px;
+		text-transform: uppercase;
+		border: 1px solid $primary-color;
+		text-decoration: none;
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: $primary-color;
+			transition: all .4s ease-in;
+			}
+	
+}
+.social {
+		padding: 0;
+		position: relative;
+	&__list {
+		display: inline-block;
+		&:hover,
+		&:focus,
+		&:active {
+			transform: scale(1.4);
+			transition: all .4s ease-in;
+			}
+	}
+	&__link {
+		margin: 10px;
+		border: 2px solid #ccc;
+		border-radius: 100%;
+		padding: 10px 13px;
+		&--pad{
+			padding: 10px 15px;
+		}
+		}
+	&__ima {
+	}
+}
+}
