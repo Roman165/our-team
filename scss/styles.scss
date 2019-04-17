@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700%7CRaleway:400,500%7CRoboto:900');
 
-@import'normalize.scss';
+@import'normalize';
 
 @mixin tr($property, $time: ease-in) {
 	transition: $property $time linear;
@@ -106,9 +106,9 @@ body {
 		&:hover,
 		&:focus,
 		&:active {
-			transform: scale(1.4);
+			// transform: scale(1.4);
 			transition: all .4s ease-in;
-			// @include tr(all, .5s ease-in)
+			 background-size: 40%;
 		}
 		
 		&--left {
@@ -238,6 +238,7 @@ body {
 			}
 	
 }
+}
 .social {
 		padding: 0;
 		position: relative;
@@ -254,12 +255,23 @@ body {
 		margin: 10px;
 		border: 2px solid #ccc;
 		border-radius: 100%;
-		padding: 10px 13px;
-		&--pad{
-			padding: 10px 15px;
+		padding: 10px 20px;
+		background-repeat: no-repeat;
+		background-position: center;
+		&--linkedin {
+			background-image: url(../img/linkedin.png);
 		}
+		&--facebook{
+			// padding: 10px 20px;
+			background-image: url(../img/facebook.png);
 		}
-	&__ima {
+		&--boogle_plus {
+			background-image: url(../img/boogle_plus.png);
+		}
+		&--twitter {
+			background-image: url(../img/twitter.png);
+		}
 	}
+	
 }
-}
+

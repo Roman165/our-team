@@ -396,13 +396,10 @@ body {
     background-repeat: no-repeat;
     background-position: center; }
     .slider__arrow:hover, .slider__arrow:focus, .slider__arrow:active {
-      -webkit-transform: scale(1.4);
-      -ms-transform: scale(1.4);
-      -o-transform: scale(1.4);
-      transform: scale(1.4);
       -webkit-transition: all .4s ease-in;
       -o-transition: all .4s ease-in;
-      transition: all .4s ease-in; }
+      transition: all .4s ease-in;
+      background-size: 40%; }
     .slider__arrow--left {
       background-image: url(../img/left.png);
       left: 0;
@@ -524,23 +521,32 @@ body {
       -webkit-transition: all .4s ease-in;
       -o-transition: all .4s ease-in;
       transition: all .4s ease-in; }
-  .profile .social {
-    padding: 0;
-    position: relative; }
-    .profile .social__list {
-      display: inline-block; }
-      .profile .social__list:hover, .profile .social__list:focus, .profile .social__list:active {
-        -webkit-transform: scale(1.4);
-        -ms-transform: scale(1.4);
-        -o-transform: scale(1.4);
-        transform: scale(1.4);
-        -webkit-transition: all .4s ease-in;
-        -o-transition: all .4s ease-in;
-        transition: all .4s ease-in; }
-    .profile .social__link {
-      margin: 10px;
-      border: 2px solid #ccc;
-      border-radius: 100%;
-      padding: 10px 13px; }
-      .profile .social__link--pad {
-        padding: 10px 15px; }
+
+.social {
+  padding: 0;
+  position: relative; }
+  .social__list {
+    display: inline-block; }
+    .social__list:hover, .social__list:focus, .social__list:active {
+      -webkit-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+      -o-transform: scale(1.4);
+      transform: scale(1.4);
+      -webkit-transition: all .4s ease-in;
+      -o-transition: all .4s ease-in;
+      transition: all .4s ease-in; }
+  .social__link {
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 100%;
+    padding: 10px 20px;
+    background-repeat: no-repeat;
+    background-position: center; }
+    .social__link--linkedin {
+      background-image: url(../img/linkedin.png); }
+    .social__link--facebook {
+      background-image: url(../img/facebook.png); }
+    .social__link--boogle_plus {
+      background-image: url(../img/boogle_plus.png); }
+    .social__link--twitter {
+      background-image: url(../img/twitter.png); }
